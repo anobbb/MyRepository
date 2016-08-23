@@ -92,7 +92,7 @@ public class BoardExample {
 							board[2] = content;
 							boards[bNum] = board;
 							break;
-					}
+					} 
 				}
 				
 				
