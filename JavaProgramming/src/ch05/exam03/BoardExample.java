@@ -7,8 +7,8 @@ public class BoardExample {
 	public static void main(String[] args) throws Exception {
 		Scanner scanner = new Scanner(System.in);
 		//String[][] boards = new String[100][];
-		String[][] boards = null;
-		boards = new String[100][];
+		String[][] boards = new String[100][];
+		int view = 0;
 		
 		while(true){
 			System.out.println("---------------------------------------------------------------");
@@ -31,7 +31,6 @@ public class BoardExample {
 				
 				
 			} else if(choice.equals("2")){ //글쓰기
-				int view = 0;
 				System.out.print("제목입력: ");
 				String title = scanner.nextLine();
 				System.out.print("내용입력: ");
@@ -39,7 +38,7 @@ public class BoardExample {
 				System.out.print("글쓴이 입력: ");
 				String writter = scanner.nextLine();
 				for(int i=0; i<boards.length; i++){
-					if(boards[i] != null){
+					if(boards[i] == null){
 						String[] board = { String.valueOf(i), title, content, writter, String.valueOf(view) };
 						boards[i] = board;
 						break;
@@ -49,35 +48,49 @@ public class BoardExample {
 				
 			} else if(choice.equals("3")){ //상세보기
 				System.out.print("선택한 글번호: ");
-				int bno = Integer.parseInt(scanner.nextLine());
+				String bChoice = scanner.nextLine();
+				int bNum = Integer.parseInt(bChoice);
 				System.out.println("************************************************************************");
 				System.out.println("번호\t제목\t내용\t\t글쓴이\t조회수");
 				System.out.println("************************************************************************");
-				//for(String[] board : boards){
-				String[] board = boards[bno];
-				if(boards != null){
-					int view = Integer.parseInt(board[bno]);
-					++view;
-					board[4] = String.valueOf(view);
-					System.out.println(board[0] + "\t" + board[1] +"\t" + board[2] 
-							+ "\t\t" + board[3] + "\t" + board[4]);
-					}
-				//}
-			} else if(choice.equals("4")){ //수정
-				int bno = Integer.parseInt(scanner.nextLine());
+
+					
 				for(String[] board : boards){
-					if(bno == Integer.parseInt(board[bno])){
+					
+					if(board != null){
+						view = Integer.parseInt(board[4]);
+						if(bChoice.equals(board[0])){
+							++view;
+							board[4] = String.valueOf(view);
+							System.out.println( board[0] + "\t" + board[1] + "\t" + board[2] + "\t\t" 
+									+ board[3] + "\t" + board[4] );
+						}
+					}
+				}
+				/*if(boards != null){
+					if(bChoice.equals(boards[bNum][0])){//if() 글번호 똑같은지 묻기
+						view = Integer.parseInt(boards[bNum][4]);
+						++view;
+						boards[bNum][4] = String.valueOf(view);
+				
+						System.out.println(boards[bNum][0] + "\t" + boards[bNum][1] +"\t" + boards[bNum][2] 
+								+ "\t\t" + boards[bNum][3] + "\t" + boards[bNum][4]);
+					}
+				}*/
+				
+			} else if(choice.equals("4")){ //수정
+				System.out.println("수정할 번호: ");
+				int bNum = Integer.parseInt(scanner.nextLine());
+				for(String[] board : boards){
+					if(bNum == Integer.parseInt(board[bNum])){
 						System.out.print("제목입력: ");
 						String title = scanner.nextLine();
 						System.out.print("내용입력: ");
 						String content = scanner.nextLine();
-						for(int i=0; i<bno; i++){
-								board[1] = title; 
-								board[2] = content;
-								boards[i] = board;
-								break;
-							
-						}
+							board[1] = title; 
+							board[2] = content;
+							boards[bNum] = board;
+							break;
 					}
 				}
 				
