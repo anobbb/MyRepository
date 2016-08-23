@@ -39,6 +39,7 @@ public class BoardExample {
 				String writter = scanner.nextLine();
 				for(int i=0; i<boards.length; i++){
 					if(boards[i] == null){
+						view = 0;
 						String[] board = { String.valueOf(i), title, content, writter, String.valueOf(view) };
 						boards[i] = board;
 						break;
