@@ -1,4 +1,4 @@
-package ch06.exam11;
+package ch06.examHW;
 
 public class Board {
 	
@@ -19,4 +19,5 @@ public class Board {
 		this.writer = writer;
 		this.view = view;
 	}
+	
 }

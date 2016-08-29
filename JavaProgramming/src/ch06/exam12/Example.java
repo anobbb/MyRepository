@@ -10,7 +10,7 @@ public class Example {
 		
 		//Static Member 사용
 		//StaticMember.field = "자바";
-		
+		//정적 영역은 StaticMember.field 방식으로 호출하는 것이 정석.
 		System.out.println(StaticMember.field);
 		StaticMember.method();
 		//StaticMember sm = new StaticMember();

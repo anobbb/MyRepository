@@ -1,4 +1,4 @@
-package ch06.exam11;
+package ch06.examHW;
 
 import java.util.Scanner;
 
