@@ -6,8 +6,7 @@ public class BoardExample {
 
 	public static void main(String[] args) throws Exception {
 		Scanner scanner = new Scanner(System.in);
-		Board[] boards = null;
-		
+		Board[] boards = null;	
 		
 		while(true){
 			//view = 0;
