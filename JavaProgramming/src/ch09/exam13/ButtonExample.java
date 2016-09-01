@@ -18,5 +18,3 @@ public class ButtonExample {
 		btnOk.click();
 	}
 }
-
-
