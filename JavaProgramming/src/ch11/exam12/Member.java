@@ -1,4 +1,4 @@
-package ch11.exam11;
+package ch11.exam12;
 
 public class Member implements Comparable{
 	private String name;

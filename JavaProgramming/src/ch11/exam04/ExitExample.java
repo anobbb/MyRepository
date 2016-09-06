@@ -26,7 +26,7 @@ public class ExitExample {
 				//System.exit(0); //프로그램 실행 중지, 강제 종료
 				System.exit(3); // 프로그램 완전히 종료
 				//break;
-				//eturn; //main method의 실행을 멈춰라. ->현재 실행중인 process 종료의 의미가 아님
+				//return; //main method의 실행을 멈춰라. ->현재 실행중인 process 종료의 의미가 아님
 				
 			}*/
 		}

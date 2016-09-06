@@ -2,8 +2,6 @@ package ch11.exam12;
 
 import java.util.Arrays;
 
-import ch11.exam11.Member;
-
 public class ArraySearchExample {
 	public static void main(String[] args){
 		int[] scores = { 99, 97, 98 }; 

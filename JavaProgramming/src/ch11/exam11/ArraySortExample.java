@@ -1,8 +1,6 @@
-package ch11.exam12;
+package ch11.exam11;
 
 import java.util.Arrays;
-
-import ch11.exam11.Board;
 
 public class ArraySortExample {
 	
