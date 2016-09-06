@@ -21,7 +21,6 @@ public class ArrayCopyExample {
 		//System.out.println(arr3);
 		System.out.println(Arrays.toString(arr3));
 		
-		
 		//배열 복사 방법3 (얕은복사)
 		char[] arr4  = Arrays.copyOf(arr1, arr1.length);
 		System.out.println(Arrays.toString(arr4));
