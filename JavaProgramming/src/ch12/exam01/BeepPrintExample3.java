@@ -16,7 +16,7 @@ public class BeepPrintExample3 {
 				}
 			}
 		};
-		thread.setName("Sound Thread"); //start 전에 이름 바꾸
+		thread.setName("Sound Thread"); //start 전에 이름 바꿔야 함
 		thread.start();
 		
 		for(int i=0; i<5; i++){ 
