@@ -1,4 +1,4 @@
-package PracticeQuestion;
+package PracticeQuestion15;
 
 public class Board {
 	private String title;

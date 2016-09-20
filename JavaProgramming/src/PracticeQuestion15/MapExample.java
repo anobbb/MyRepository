@@ -1,4 +1,4 @@
-package PracticeQuestion;
+package PracticeQuestion15;
 
 import java.util.HashMap;
 import java.util.Map;
