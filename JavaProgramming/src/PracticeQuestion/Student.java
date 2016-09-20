@@ -11,13 +11,21 @@ public class Student {
 	
 	@Override
 	public int hashCode() {
-		
-		return super.hashCode();
+		return studentNum; 
 	}
 	
 	@Override
 	public boolean equals(Object obj) {
+		if(obj instanceof Student){
+			Student target = (Student)obj;
+			if(studentNum == target.studentNum){
+				return true;
+			} else {
+				return false;
+			}
+		} else{
+			return false;
+		}
 		
-		return super.equals(obj);
 	}
 }
