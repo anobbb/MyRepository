@@ -19,7 +19,7 @@ public class ReaderExample {
 		
 		reader = new FileReader("src/ch18/exam04/data.txt");
 		data = "";
-		char[] values = new char[3]; //두 글자씩 읽음
+		char[] values = new char[2]; //두 글자씩 읽음
 		int charNum = -1;
 		while((charNum = reader.read(values)) != -1){
 			data += new String(values, 0, charNum); //읽은 문자 수만큼 추가
