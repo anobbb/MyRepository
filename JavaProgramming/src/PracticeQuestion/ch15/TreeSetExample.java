@@ -1,4 +1,4 @@
-package PracticeQuestion15;
+package PracticeQuestion.ch15;
 
 import java.util.TreeSet;
 

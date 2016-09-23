@@ -1,4 +1,4 @@
-package PracticeQuestion15;
+package PracticeQuestion.ch15;
 
 public class Student {
 	public int studentNum;
