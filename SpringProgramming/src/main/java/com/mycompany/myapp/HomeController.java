@@ -1,39 +1,28 @@
 package com.mycompany.myapp;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class HomeController {
-	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
+
+	@RequestMapping("/") // 요청을 연결함 -> http://localhost:8080/myapp/ 에서 myapp/ 즉,
+							// context/의 /와 연결됨.
+	public String index() {
+		System.out.println("home() 실행1"); // 성능때문에 나중에 개발완료 후 지워야 함.
+		logger.info("home() 실행"); // 출력여부를 조정가능하기 떄문에 안 지워도 됨(logger level조정)
+		// src/main/resources->log4j.xml
+		/*
+		 * <!-- Application Loggers --> 
+		 * <logger name="com.mycompany.myapp">
+		 * <level value="off" />
+		 * </logger>
+		 * http://logging.apache.org/log4j/2.x/manual/customloglevels.html#
+		 * CustomLoggers
+		 */
+		return "index"; // views -> index.jsp
 	}
-	
 }

@@ -12,7 +12,7 @@
 	
 	<!-- Application Loggers -->
 	<logger name="com.mycompany.myapp">
-		<level value="info" />
+		<level value="off" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
