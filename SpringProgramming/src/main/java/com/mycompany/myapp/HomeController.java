@@ -25,4 +25,10 @@ public class HomeController {
 		 */
 		return "home"; // views == home.jsp
 	}
-}
+	
+	@RequestMapping("/news") //http://localhost:8080/myapp/news
+	public String news(){
+		logger.info("news() 실행");
+		return "news";
+	}
+}//HomeController
