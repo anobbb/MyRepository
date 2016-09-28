@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <!-- 서블릿 등록 -->
+  <servlet>
+  	<servlet-name>now</servlet-name><!-- 등록이름은 수정 가능 -->
+  	<servlet-class>servlet.NowServlet</servlet-class> <!-- 서블릿 클래스 이름 -->
+  	<init-param> <!-- 서블릿 객체를 생성할 때, 값과 이름을 class에 제공하고 싶은 정보를 기재 -->
+		<param-name>location</param-name> <!-- 변수 이름, 서블릿이 알고있는 이름을 줘야 함, 함부로 바꾸면 안 됨 -->
+		<param-value>부산</param-value> <!-- 변수 값 -->
+	</init-param>
+  	<load-on-startup>1</load-on-startup> <!-- web app이 was에 배치되지마자 servlet객체를 생성, 숫자는 객체들의 생성 순서 -->
+  </servlet>
+  
+  <!-- 서블릿 URL 매핑 -->
+  <servlet-mapping>
+  	<servlet-name>now</servlet-name>
+  	<url-pattern>/*</url-pattern> <!-- "/"는 context만 맞으면 실행 -->
+  </servlet-mapping>
+</web-app>

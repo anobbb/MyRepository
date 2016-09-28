@@ -23,6 +23,6 @@ public class HomeController {
 		 * http://logging.apache.org/log4j/2.x/manual/customloglevels.html#
 		 * CustomLoggers
 		 */
-		return "index"; // views -> index.jsp
+		return "home"; // views == home.jsp
 	}
 }
