@@ -13,16 +13,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-public class HomeController {
+@RequestMapping("/stamp")
+public class WelcomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(WelcomeController.class);
 	
-	@RequestMapping("/")
-	public String home() {
-		logger.info("home 화면");		
-		return "home";
+	
+	
+	@RequestMapping("/welcome")
+	public String welcome() {
+		logger.info("Welcome방문처리");		
+		return "stamp/welcome";
 	}
 	
-	
+	@RequestMapping("/write")
+	public String write(){
+		logger.info("write 요청 처리");
+		return "stamp/write";
+	}
 	
 }

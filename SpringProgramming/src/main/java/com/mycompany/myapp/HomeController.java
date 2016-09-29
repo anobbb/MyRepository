@@ -20,7 +20,7 @@ public class HomeController {
 		 * <logger name="com.mycompany.myapp">
 		 * <level value="off" />
 		 * </logger>
-		 * http://logging.apache.org/log4j/2.x/manual/customloglevels.html#
+		 * http://logging.apache.org/log4j/2.x/manual/customloglevels.html
 		 * CustomLoggers
 		 */
 		return "home"; // views == home.jsp
