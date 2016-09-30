@@ -21,6 +21,7 @@ public class Exam03Controller {
 	}
 	
 	@RequestMapping("/join")
+						//커맨드 객체(요청객체)
 	public String join(Member member){
 		logger.info("join 요청 처리");
 		logger.info("mid: " + member.getMid());
