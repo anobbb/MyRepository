@@ -35,7 +35,7 @@ public class Exam05Controller {
 		
 	@RequestMapping("/index3")
 	public void index3(HttpServletRequest request, HttpServletResponse response) throws IOException{
-		logger.info("index2 요청");
+		logger.info("index3 요청");
 		//void형식이면 myapp/exam05/index3.jsp mapping된 제일 마지막 요청 경로.jsp를 찾음
 		//사용하는경우: 이 메소드 안에서 응답을 직접 만들어서 보내고 싶을 때, 즉 jsp로 굳이 안 가도 될 때
 		//WEB-INF안에 있는 이미지 접근(resource가 아니므로 일반 url경로로 접근 불가)
