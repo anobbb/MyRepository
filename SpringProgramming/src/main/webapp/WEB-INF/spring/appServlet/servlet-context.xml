@@ -23,6 +23,25 @@
 	<!-- component: 스프링이 관리해야 할 객체 -->
 	<context:component-scan base-package="com.mycompany.myapp" />
 	
-	
-	
+	<!-- A를 관리 객체로 생성, id(or name)는 등록이름 -->
+	<beans:bean name="aObj" class="com.mycompany.myapp.exam09.A"/>
+	<beans:bean name="bObj" class="com.mycompany.myapp.exam09.B"/>
+	<beans:bean name="serviceAObj" class="com.mycompany.myapp.exam09.ServiceA"/>
+	<beans:bean name="serviceBObj" class="com.mycompany.myapp.exam09.ServiceB"/>
+	<beans:bean name="serviceCImpl1" class="com.mycompany.myapp.exam09.ServiceCImpl2"/>
+	<beans:bean name="serviceDImpl1" class="com.mycompany.myapp.exam09.ServiceDImpl2"/>
+	<!-- Exam09Controller 객체를 컨트롤러 객체를 찾아서 가져오기 -->
+	<beans:bean name="exam09Controller" class="com.mycompany.myapp.exam09.Exam09Controller">
+	<!-- Setter 주입=>property
+		<beans:property name="setter이름" ref="매개값으로 전달할 객체(관리객체이름)"/>
+	-->
+	<beans:property name="a" ref="aObj"/>
+	<beans:property name="b" ref="bObj"/>
+	<beans:property name="serviceA" ref="serviceAObj"/> 
+	<beans:property name="serviceB" ref="serviceBObj"/>
+	<beans:property name="serviceC" ref="serviceCImpl1"/>
+	<beans:property name="serviceD" ref="serviceDImpl1"/>
+	<!-- setter메소드 이름, set을 떼고 첫 자를 소문자로 한 이름, ""/는 setB(b)와 같음 -->
+		
+	</beans:bean>
 </beans:beans>
