@@ -5,8 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-
 @Controller
 @RequestMapping("/exam09")
 public class Exam09Controller {
@@ -45,7 +43,31 @@ public class Exam09Controller {
 	public void setServiceD(ServiceD serviceD) {
 		this.serviceD = serviceD;
 	}
+	
+	private C c;
+	public void setC(C c){
+		logger.info("setC() 실행");
+		this.c = c;
+	}
+	
+	//컨트롤러는 반드시 (컨트롤러) 기본 생성자가 있어야 한다.
+	/*public Exam09Controller(C c){
+		logger.info("Exam09Controller 객체 생성");
+		this.c = c;
+	}*/ //기본 생성자 없이는 불가능, 기본 생성자 없이 생성자주입은 불가능->setter주입만 가능
 
+	private E e;
+	public void setE(E e){
+		logger.info("setE() 실행");
+		this.e = e;
+	}
+	
+	private F f;
+	public void setF(F f){
+		logger.info("setF() 실행");
+		this.f = f;
+	}
+	
 	public Exam09Controller(){
 		logger.info("Exam09Controller 객체 생성");
 	}
@@ -65,6 +87,15 @@ public class Exam09Controller {
 		serviceB.method();
 		serviceC.method();
 		serviceD.method();
+		return "redirect:/exam09/index";
+	}
+	
+	@RequestMapping("/method2")
+	public String method2(){
+		logger.info("method2 처리");
+		c.method();
+		e.method();
+		f.method();
 		return "redirect:/exam09/index";
 	}
 	
