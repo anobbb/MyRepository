@@ -1,4 +1,4 @@
-package com.mycompany.myapp.exam11.dto;
+package com.mycompany.lbnapptest.test11.dto;
 
 import java.util.Date;
 

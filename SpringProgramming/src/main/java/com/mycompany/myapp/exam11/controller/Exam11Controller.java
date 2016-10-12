@@ -79,7 +79,7 @@ public class Exam11Controller {
 		} else if(result == Exam11MemberService.LOGIN_FAIL_MID){
 			return "redirect:/exam11/memberLogin"; //refresh버튼 눌러도 갱신됨
 		} else {
-			return "redirect:/exam11/memberLogin"; // 양식 다시 보여주기 //index.jsp의 경로..
+			return "redirect:/exam11/memberLogin"; // 양식 다시 보여주기 //index.jsp의 경로
 		}
 		
 		/* Get과 Post의 요청경로(value)가 다를 경우 그냥 exam11/memberLogin으로 해도 됨.
@@ -95,7 +95,7 @@ public class Exam11Controller {
 	}
 	
 	@RequestMapping("/memberLogout")
-	public String memberLogin(){
+	public String memberLogout(){
 		logger.info("memberLogout 처리");
 		return "redirect:/exam11/index";
 	}

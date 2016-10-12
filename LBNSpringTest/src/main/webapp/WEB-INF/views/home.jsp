@@ -17,9 +17,13 @@
 	7. <a href="/lbnapptest/test07/index">Test07</a>: 컨트롤에서 JSP로 데이터 객체 전달 <br/> 
 	8. <a href="/lbnapptest/test08/index">Test08</a>: 리다이렉트 <br/>
 		
-		<br/>
+	<br/>
 		
 	9. <a href="/lbnapptest/test09/index">Test09</a>: 의존성 주입(DI) <br/>
 	10. <a href="/lbnapptest/test10/index">Test10</a>: 의존성 주입(DI): 어노테이션 이용 <br/>
+	
+	<br/>
+		
+	11. <a href="/lbnapptest/test11/index">Test11</a>: 서비스 계층과 데이터(퍼시스턴스) 계층 <br/>
 </body>
 </html>
