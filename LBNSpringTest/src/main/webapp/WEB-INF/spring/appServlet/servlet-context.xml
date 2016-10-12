@@ -31,6 +31,23 @@
 	<beans:bean name="serviceCImpl1" class="com.mycompany.lbnapptest.test09.ServiceCImpl1"/>
 	<beans:bean name="serviceDImpl1" class="com.mycompany.lbnapptest.test09.ServiceDImpl2"/>
 	
+	<beans:bean name="c" class="com.mycompany.lbnapptest.test09.C">
+		<beans:constructor-arg ref="d"/> <!-- D를 관리객체로 만들어서 사용 가능, 생성자 주입 -->
+	</beans:bean>
+	
+	<beans:bean name="d" class="com.mycompany.lbnapptest.test09.D"/>
+	
+	<beans:bean name="e" class="com.mycompany.lbnapptest.test09.E">
+		<beans:constructor-arg ref="b"/>
+		<beans:constructor-arg ref="d"/>
+	</beans:bean>
+	
+	<beans:bean name="f" class="com.mycompany.lbnapptest.test09.F">
+		<beans:constructor-arg ref="serviceA"/>
+		<beans:constructor-arg ref="serviceB"/>
+		<beans:constructor-arg ref="serviceCImpl1"/>
+	</beans:bean>
+	
 	<beans:bean name="test09Controller" class="com.mycompany.lbnapptest.test09.Test09Controller">
 	
 		<beans:property name="a" ref="a"/>
@@ -39,5 +56,8 @@
 		<beans:property name="serviceB" ref="serviceB"/>
 		<beans:property name="serviceC" ref="serviceCImpl1"/>
 		<beans:property name="serviceD" ref="serviceDImpl1"/>
+		<beans:property name="c" ref="c"/> 
+		<beans:property name="e" ref="e"/>
+		<beans:property name="f" ref="f"/>
 	</beans:bean>
 </beans:beans>

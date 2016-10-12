@@ -14,6 +14,10 @@ public class K {
 	@Autowired
 	private H h;
 	
+	public K(){
+		logger.info("K 객체 생성");
+	}
+	
 	public K(G g, H h){
 		logger.info("K 객체 생성");
 	}

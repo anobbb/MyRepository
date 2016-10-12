@@ -1,5 +1,9 @@
 package com.mycompany.myapp.exam04;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Member {
 	private String mid;
 	private String mname;
@@ -10,7 +14,8 @@ public class Member {
 	private String[] mskill;
 	private String maddress1;
 	private String maddress2;
-	private String mbirth;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date mbirth;
 	
 	
 	public String getMid() {
@@ -67,13 +72,11 @@ public class Member {
 	public void setMaddress2(String maddress2) {
 		this.maddress2 = maddress2;
 	}
-	public String getMbirth() {
+	public Date getMbirth() {
 		return mbirth;
 	}
-	public void setMbirth(String mbirth) {
+	public void setMbirth(Date mbirth) {
 		this.mbirth = mbirth;
 	}
-	
-	
 	
 }

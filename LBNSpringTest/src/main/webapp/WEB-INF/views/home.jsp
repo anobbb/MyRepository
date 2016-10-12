@@ -20,5 +20,6 @@
 		<br/>
 		
 	9. <a href="/lbnapptest/test09/index">Test09</a>: 의존성 주입(DI) <br/>
+	10. <a href="/lbnapptest/test10/index">Test10</a>: 의존성 주입(DI): 어노테이션 이용 <br/>
 </body>
 </html>
