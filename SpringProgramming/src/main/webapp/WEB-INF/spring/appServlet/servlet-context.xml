@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!--  beans:bean ... -> spring 관리 객체로 생성하는 역할
+		  bean...-> 예약된 이름
+		  property: setter주입
+		  setPrefix("/WEB-INF/views");	setSuffix(".jsp");	value는 개발자가 바꿀 수 있음(경로수정)
+	 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	<!-- component: 스프링이 관리해야 할 객체 -->
+	<context:component-scan base-package="com.mycompany.myapp" />
+	
+	<!-- 각 클래스를 관리 객체로 생성, id(or name)는 등록이름 -->
+	<!-- A를 관리 객체로 생성 -->
+	<beans:bean name="aObj" class="com.mycompany.myapp.exam09.A"/>
+	
+	<!-- B를 관리 객체로 생성 -->
+	<beans:bean name="bObj" class="com.mycompany.myapp.exam09.B"/>
+	
+	<!-- ServiceA를 관리 객체로 생성 -->
+	<beans:bean name="serviceAObj" class="com.mycompany.myapp.exam09.ServiceA"/>
+	
+	<!-- ServiceB를 관리 객체로 생성 -->
+	<beans:bean name="serviceBObj" class="com.mycompany.myapp.exam09.ServiceB"/>
+	
+	<!-- ServiceCImpl1를 관리 객체로 생성 -->
+	<beans:bean name="serviceCImpl1" class="com.mycompany.myapp.exam09.ServiceCImpl1"/>
+	
+	<!-- ServiceCImpl2를 관리 객체로 생성 -->
+	<beans:bean name="serviceDImpl1" class="com.mycompany.myapp.exam09.ServiceDImpl2"/>
+	
+	<!-- 기본생성자를 기준으로 관리 객체를 생성, but C의 기본생성자가 없으므로 Error
+	<beans:bean name="c" class="com.mycompany.myapp.exam09.C"/> -->
+	
+	<beans:bean name="c" class="com.mycompany.myapp.exam09.C">
+		<beans:constructor-arg ref="d"/> <!-- D를 관리객체로 만들어서 사용 가능, 생성자 주입 -->
+	</beans:bean>
+	
+	<!-- D를 관리 객체로 생성 -->
+	<beans:bean name="d" class="com.mycompany.myapp.exam09.D"/>
+	
+	<!-- E를 관리 객체로 생성 -->
+	<beans:bean name="e" class="com.mycompany.myapp.exam09.E">
+		<beans:constructor-arg ref="bObj"/>
+		<beans:constructor-arg ref="d"/>
+	</beans:bean>
+	
+	<!-- F를 관리 객체로 생성 -->
+	<beans:bean name="f" class="com.mycompany.myapp.exam09.F">
+		<beans:constructor-arg ref="serviceAObj"/>
+		<beans:constructor-arg ref="serviceBObj"/>
+		<beans:constructor-arg ref="serviceCImpl1"/>
+	</beans:bean>
+	
+	<!-- Exam09Controller 객체를 컨트롤러 객체를 찾아서 가져오기 -->
+	<beans:bean name="exam09Controller" class="com.mycompany.myapp.exam09.Exam09Controller">
+	
+		<!-- Setter 주입=>property
+			beans:bean ... -> spring 관리 객체로 생성
+			<beans:property name="setter이름"  value는 (매개변수 자리에 직접적인)값, ref="매개값으로 전달할 객체(관리객체이름)"/>
+			property name: setter메소드 이름, set을 떼고 첫 자를 소문자로 한 이름, ""/는 setB(b)와 같음 
+		-->
+		<!-- Setter 주입 선언 -->
+		<beans:property name="a" ref="aObj"/>
+		<beans:property name="b" ref="bObj"/>
+		<beans:property name="serviceA" ref="serviceAObj"/> 
+		<beans:property name="serviceB" ref="serviceBObj"/>
+		<beans:property name="serviceC" ref="serviceCImpl1"/>
+		<beans:property name="serviceD" ref="serviceDImpl1"/>
+		<beans:property name="c" ref="c"/> <!-- ref는 C를 관리객체로 생성한 이름(name) -->
+		<beans:property name="e" ref="e"/>
+		<beans:property name="f" ref="f"/>
+		
+	</beans:bean>
+</beans:beans>
