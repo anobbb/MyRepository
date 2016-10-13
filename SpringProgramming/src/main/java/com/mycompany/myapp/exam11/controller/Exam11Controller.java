@@ -113,12 +113,18 @@ public class Exam11Controller {
 		return "redirect:/exam11/index";
 	}
 	
-	@RequestMapping(value="/boardList")
+	@RequestMapping("/boardList")
 	public String boardList(Model model){
 		logger.info("boardList 처리");
 		List<Board> list = boardService.getList();
 		model.addAttribute("boardlist", list);
 		return "exam11/boardList";
+	}
+	
+	@RequestMapping("/boardView")
+	public String boardView(int bno){
+		logger.info("boardView 처리");
+		return "exam11/boardView";
 	}
 	
 }
