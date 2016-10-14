@@ -16,6 +16,10 @@
 	
 	<br/>
 		
-	
+	4) <a href="/lbnapptest/test11/boardWrite">게시물 쓰기</a><br/>
+	5) <a href="/lbnapptest/test11/boardList">게시물 목록</a><br/>
+	6) <a href="/lbnapptest/test11/boardView?bno=5">게시물 보기</a><br/>
+	7) <a href="/lbnapptest/test11/boardUpdate?bno=5">게시물 수정</a><br/>
+	8) <a href="/lbnapptest/test11/boardDelete?bno=5">게시물 삭제</a><br/>
 	</body>
 </html>

@@ -1,15 +1,19 @@
 package com.mycompany.lbnapptest.test11.controller;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.mycompany.lbnapptest.test11.dto.Board;
 import com.mycompany.lbnapptest.test11.dto.Member;
+import com.mycompany.lbnapptest.test11.service.Test11BoardService;
 import com.mycompany.lbnapptest.test11.service.Test11MemberService;
 
 @Controller("MemberController")
@@ -19,6 +23,9 @@ public class Test11Controller {
 	
 	@Autowired
 	private Test11MemberService memberService;
+	
+	@Autowired
+	private Test11BoardService boardService;
 	
 	@RequestMapping("/index")
 	public String index(){
@@ -84,4 +91,55 @@ public class Test11Controller {
 		return "redirect:/test11/index";
 	}
 	
+	
+	@RequestMapping(value="/boardWrite", method=RequestMethod.GET)
+	public String boardWriteForm(){
+		logger.info("boardWriteForm 처리");
+		return "/test11/boardWriteForm";
+	}
+	
+	@RequestMapping(value="/boardWrite", method=RequestMethod.POST)
+	public String boardWrite(Board board){
+		logger.info("boardWrite 처리");
+		boardService.write(board);
+		return "redirect:/test11/index";
+	}
+	
+	@RequestMapping("/boardList")
+	public String boardList(Model model){
+		logger.info("boardList 처리");
+		List<Board> list = boardService.getList();
+		model.addAttribute("boardlist", list);
+		return "/test11/boardList";
+	}
+	
+	@RequestMapping("/boardView")
+	public String boardView(int bno, Model model){
+		logger.info("boardview 처리");
+		Board board = boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "test11/boardView";
+	}
+	
+	@RequestMapping(value = "/boardUpdate", method=RequestMethod.GET)
+	public String boardUpdateForm(int bno, Model model){
+		logger.info("boardUpdateForm 처리");
+		Board board = boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "test11/boardUpdateForm";
+	}
+	
+	@RequestMapping(value = "/boardUpdate", method=RequestMethod.POST)
+	public String boardUpdate(Board board){
+		logger.info("boardUpdate 처리");
+		boardService.updateBoard(board);
+		return "redirect:/test11/boardList";
+	}
+	
+	@RequestMapping("/boardDelete")
+	public String boardDelete(int bno){
+		logger.info("boarddelete 처리");
+		boardService.deleteBoard(bno);
+		return "redirect:/test11/boardList";
+	}
 }//Controller
