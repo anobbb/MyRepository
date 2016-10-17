@@ -36,12 +36,7 @@ public class Exam06 {
 			while(rs.next()){
 				emp.setEmpno(rs.getInt("empno"));
 				emp.setEname(rs.getString("ename"));
-				emp.setJob(rs.getString("job"));
-				emp.setMgr(rs.getInt("mgr"));
-				emp.setHiredate(rs.getDate("hiredate"));
 				emp.setSal(rs.getInt("sal"));
-				emp.setComm(rs.getDouble("comm"));
-				emp.setDeptno(rs.getInt("deptno"));
 			}
 			pstmp.close();
 			rs.close();
