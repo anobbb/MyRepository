@@ -17,11 +17,13 @@ public class Exam06 {
 		for(Department dept : result){
 			System.out.println(dept.getDeptno() + ": " + dept.getDname() + ": " + dept.getLoc());
 		}
-	}
+	}// main
 	
 	//Employee 객체를 리턴 (해당된 행 하나만)
 	private static Employee getEmployee(int searchEmpno) {
-		Employee emp = new Employee();
+		Employee emp = null;
+		// 변수는 초기화하지 않으면 메모리에 올라가지 않음, 초기화하지 않은 상태에서 변수를 사용하면 초기화 에러남
+		// 변수 사용이 안 돼서 try-catch문도 제대로 실행되지 않고 finally에서 nullpointException 발생 
 		Connection conn = null;
 		try{
 			Class.forName("oracle.jdbc.OracleDriver");
@@ -34,16 +36,23 @@ public class Exam06 {
 			ResultSet rs = pstmp.executeQuery();
 			
 			while(rs.next()){
+				emp = new Employee();
 				emp.setEmpno(rs.getInt("empno"));
 				emp.setEname(rs.getString("ename"));
-				emp.setSal(rs.getInt("sal"));
+				emp.setJob(rs.getString("job"));
+				emp.setMgr(rs.getInt("mgr"));
+				emp.setHiredate(rs.getDate("hiredate"));
+				emp.setSal(rs.getDouble("sal"));
+				emp.setComm(rs.getDouble("comm"));
+				emp.setDeptno(rs.getInt("deptno"));
+				
 			}
 			pstmp.close();
 			rs.close();
-			conn.close();
 		} catch(Exception e){
 			e.printStackTrace();
-			try{ conn.close(); } catch(SQLException e2){}
+		} finally{
+			try{ conn.close(); } catch(SQLException e){}
 		}
 		return emp;
 	} //getEmployeement
@@ -69,7 +78,9 @@ public class Exam06 {
 				department.setLoc(rs.getString(3));
 				list.add(department);
 			}
-			
+			rs.close();
+			pstmt.close();
+			conn.close();
 		}catch(Exception e){
 			e.printStackTrace();
 			try{ conn.close(); } catch(SQLException e2){}
