@@ -19,22 +19,22 @@ public class BoardDao {
 
 	public int insert(Board board) throws SQLException{
 		String sql = "insert into board(bno, btitle, bcontent, bwriter, bhitcount, bdate) ";
-		sql += "values (?, ?, ?, ?, ?, ?)";
+		sql += "values (seq_board_bno.nextval, ?, ?, ?, 0, sysdate)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, board.getBno());
-		pstmt.setString(2, board.getBtitle());
-		pstmt.setString(3, board.getBcontent());
-		pstmt.setString(4, board.getBwriter());
-		pstmt.setInt(5, board.getBhitcount());
-		pstmt.setDate(6, new Date(board.getBdate().getTime()));
+		pstmt.setString(1, board.getBtitle());
+		pstmt.setString(2, board.getBcontent());
+		pstmt.setString(3, board.getBwriter());
+		// bhitcount와 bdate는 default 선언하였으므로 지워야 함
+		// pstmt.setInt(5, board.getBhitcount());
+		// pstmt.setDate(6, new Date(board.getBdate().getTime()));
 		int rowNo = pstmt.executeUpdate();	
 		pstmt.close();
 		return rowNo;
 	} // insert
 	
 	public Board selectByBno(int bno) throws SQLException{
-		String sql = "select bno, btitle, bcontent, bwriter, bhitcount, bdate from board ";
 		Board board = null;
+		String sql = "select bno, btitle, bcontent, bwriter, bhitcount, bdate from board ";
 		sql += "where bno=?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, bno);
@@ -100,4 +100,4 @@ public class BoardDao {
 		return rowNo;
 	} // deleteByBno
 	
-}// classs
+}// class
