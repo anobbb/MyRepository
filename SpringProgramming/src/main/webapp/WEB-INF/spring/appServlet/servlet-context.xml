@@ -88,6 +88,17 @@
 		<beans:property name="c" ref="c"/> <!-- ref는 C를 관리객체로 생성한 이름(name) -->
 		<beans:property name="e" ref="e"/>
 		<beans:property name="f" ref="f"/>
-		
+	</beans:bean>
+	
+	<!-- Connection Pool -->
+  	<beans:bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<beans:property name="driverClass" value="oracle.jdbc.OracleDriver"/>
+		<beans:property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+		<beans:property name="user" value="tester1"/>
+		<beans:property name="password" value="kosa12345"/>
+		<beans:property name="maxPoolSize" value="3"/>
+		<beans:property name="initialPoolSize" value="1"/>
+		<beans:property name="acquireIncrement" value="1"/>
+		<beans:property name="minPoolSize" value="1"/>
 	</beans:bean>
 </beans:beans>

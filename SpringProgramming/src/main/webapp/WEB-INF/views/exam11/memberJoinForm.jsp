@@ -52,7 +52,6 @@
 				--%>
 				<input type="image" src="/myapp/resources/image/join.png" width="150"/>
 			
-			
 		</form>
 	</body>
 </html>

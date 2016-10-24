@@ -16,6 +16,7 @@ public class TestBoardDao {
 		//testSelectByBtitle();
 		//testUpdate();
 		//testDeleteByBno();
+		testSelectByPage(2, 10);
 	}// main
 
 	
@@ -29,11 +30,11 @@ public class TestBoardDao {
 			dao.setConn(conn);
 			int rowNo = 0;
 			
-			for(int i=1; i<10000; i++){
+			for(int i=1; i<=10000; i++){
 				
 				Board board = new Board();
-				board.setBtitle("제목" + i);
-				board.setBcontent("내용"+ i);
+				board.setBtitle("테스트제목" + i);
+				board.setBcontent("테스트내용"+ i);
 				board.setBwriter("user10");
 				
 				rowNo = dao.insert(board);
@@ -147,5 +148,33 @@ public class TestBoardDao {
 		}
 		
 	} // deleteByBno
+	
+	public static void testSelectByPage(int pageNo, int rowsPerPage){
+		Connection conn = null;
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "tester1", "kosa12345");
+			
+			BoardDao dao = new BoardDao();
+			dao.setConn(conn);
+			
+			List<Board> list = dao.selectByPage(pageNo, rowsPerPage);
+			
+			
+			for(Board board : list){
+				System.out.print(board.getBno() + ": ");
+				System.out.print(board.getBtitle() + ": ");
+				System.out.print(board.getBcontent() + ": ");
+				System.out.print(board.getBwriter() + ": ");
+				System.out.print(board.getBhitcount() + ": ");
+				System.out.print(board.getBdate());
+				System.out.println();
+			}
+		} catch (Exception e) { 
+			e.printStackTrace();
+		} finally{
+			try{ conn.close();} catch(SQLException e){} 
+		}
+	} // testSelectByPage
 	
 } // class
