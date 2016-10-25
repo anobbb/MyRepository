@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.mycompany.myapp.exam12.dao.MemberDao;
+import com.mycompany.myapp.exam12.dao.Exam12Dao;
 import com.mycompany.myapp.exam12.dto.Member;
 
 
@@ -24,7 +24,7 @@ public class Exam12Service {
 	private DataSource dataSource;
 	
 	@Autowired
-	private MemberDao dao; // dao 주입받음
+	private Exam12Dao dao; // dao 주입받음
 	
 	public void join(Member member) {
 		Connection conn = null;
