@@ -64,7 +64,7 @@ public class MemberService {
 	public Member info(String mpassword, HttpSession session){
 		String mid = (String) session.getAttribute("login");
 		Member member = memberDao.selectByMid(mid);
-		if(member.getMpassword().equals(mpassword) == false) { return null };
+		if(member.getMpassword().equals(mpassword) == false) { return null; };
 		return member;
 	} // info
 	
