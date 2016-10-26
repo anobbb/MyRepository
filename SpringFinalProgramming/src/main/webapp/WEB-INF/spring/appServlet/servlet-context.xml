@@ -24,7 +24,7 @@
 	<!-- component: 스프링이 관리해야 할 객체 -->
 	<context:component-scan base-package="com.mycompany.myweb" />
 	
-	<!-- Connection Pool -->
+	<!-- Connection Pool 설정-->
   	<beans:bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<beans:property name="driverClass" value="oracle.jdbc.OracleDriver"/>
 		<beans:property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl"/>

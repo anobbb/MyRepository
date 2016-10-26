@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8474FACC-C4BA-740B-827F-BF67C278E1DC" name="freeboard">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:31:28 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="bno" id="2160E500-6792-128C-A456-267EACC2B17A">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:35:25 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="btitle" id="7770D8A5-0633-0184-FC95-32FF872EB9E7">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:35:25 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bcontent" id="887E1450-DFED-10E2-4855-13D76295CCF7">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:36:24 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bwriter" id="BB7DB3EF-F967-70F3-57B1-6A348E443EB0">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:36:24 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bhitcount" id="F6456BFB-BEC7-32AD-5AB8-9FF39195EA4F">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:36:24 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bdate" id="51FDB7CE-0978-D4D6-420D-233DE23D99A2">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 00:36:24 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>
