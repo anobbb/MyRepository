@@ -10,6 +10,7 @@ import com.mycompany.myweb.dto.Member;
 
 @Component
 public class MemberService {
+	// 보통 Service는 설계자가 인터페이스로 구현, 개발자가 구체적으로 작성
 	public static final int JOIN_SUCCESS = 0;
 	public static final int JOIN_FAIL = 1;
 	
@@ -35,18 +36,16 @@ public class MemberService {
 		return JOIN_SUCCESS; //예외 발생하면 spring에서 자동으로 처리, 여기에서 예외처리를 하면 spring 기능 발생하지 않게 되므로 try-catch작성X
 	} // join
 	
-	public int login(String mid, String mpassword, HttpSession session){
+	public int login(String mid, String mpassword){
 		Member member = memberDao.selectByMid(mid);
-		if(member == null) { return LOGIN_FAIL_MID; }
+		if(member == null) { return LOGIN_FAIL_MID; } // mid가 있는지 없는지 판별한 결과
 		if(member.getMpassword().equals(mpassword) == false) { return LOGIN_FAIL_MPASSWORD;}
-		session.setAttribute("login", mid);
 		return LOGIN_SUCCESS;
 	} // login
 	
 	// 세션에 로그인성공 여부 저장
 	// but, service에는 독립적으로 메소드만 구성, http 접속 여부는 service에서 되도록이면 구현하지 않는다.
-	public int logout(HttpSession session){
-		session.removeAttribute("login");
+	public int logout(String mid){
 		return LOGOUT_SUCCESS;
 	} // logout
 	
@@ -61,26 +60,32 @@ public class MemberService {
 		return memberDao.selectByMemail(memail);
 	} // findMid
 	
-	public Member info(String mpassword, HttpSession session){
-		String mid = (String) session.getAttribute("login");
+	public Member info(String mid, String mpassword){
 		Member member = memberDao.selectByMid(mid);
 		if(member.getMpassword().equals(mpassword) == false) { return null; };
 		return member;
 	} // info
 	
 	public int modify(Member member){
+		Member dbMember = memberDao.selectByMid(member.getMid());
+		if(dbMember.getMpassword().equals(member.getMpassword())== false) { return MODIFY_FAIL; }
+		int row = memberDao.update(member);
+		if(row != 1) { return MODIFY_FAIL; }
+		return MODIFY_SUCCESS;
 		
 	} // modify
 	
-	public int withdraw(String mpassword, HttpSession session){
-		String mid = (String)session.getAttribute("login");
+	public int withdraw(String mid, String mpassword){
 		Member member = memberDao.selectByMid(mid);
 		if(member.getMpassword().equals(mpassword) == false) { return WITHDRAW_FAIL; }
 		memberDao.delete(mid);
-		logout(session);
+		logout(mid);
 		return WITHDRAW_SUCCESS;
 	} // withdraw
 	
 	public boolean isMid(String mid){
+		Member member = memberDao.selectByMid(mid);
+		if(member == null) return false;
+		return true;
 	} // isMid
 }

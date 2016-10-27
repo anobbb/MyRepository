@@ -12,26 +12,31 @@
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:35:25 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="btitle" id="7770D8A5-0633-0184-FC95-32FF872EB9E7">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:35:25 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="bcontent" id="887E1450-DFED-10E2-4855-13D76295CCF7">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:36:24 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -39,28 +44,59 @@
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:36:24 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E9F8317-9DA1-324D-259B-AEB19957A621" referredColumn="11ED0EDB-C0EF-52FC-DAD9-DBA90B91249B"/>
+</associations>
 </Column>
 <Column name="bhitcount" id="F6456BFB-BEC7-32AD-5AB8-9FF39195EA4F">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:36:24 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="bdate" id="51FDB7CE-0978-D4D6-420D-233DE23D99A2">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:36:24 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ACE80959-AF9D-2206-2581-53EE93373782" name="freeboard_PK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 03:20:47 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2160E500-6792-128C-A456-267EACC2B17A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="83232251-01C2-BE62-A96F-CB0F37500C9F" name="freeboard_member_FK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 03:21:39 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BB7DB3EF-F967-70F3-57B1-6A348E443EB0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
 </Table>

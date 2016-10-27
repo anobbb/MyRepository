@@ -1,4 +1,5 @@
 <%@ page contentType= "text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -15,8 +16,16 @@
 		 $: 표현언어
 		 el에서 .은 getter 호출하는 역할
 		 -->
-		1. <a href="<%=pageContext.getServletContext().getContextPath()%>/member/login">로그인</a><br/>
-		2. <a href="${pageContext.servletContext.contextPath}/freeboard/list">자유 게시판</a><br/>
-		3. <a href="${pageContext.servletContext.contextPath}/photoboard/list">포토 게시판</a><br/>
+		1. 
+		<c:if test="${login == null}">
+			<a href="<%=pageContext.getServletContext().getContextPath()%>/member/login">로그인</a>
+		</c:if>
+		<c:if test="${login != null}">
+		<!-- 상대경로: /member/logout -->
+			<a href="<%=pageContext.getServletContext().getContextPath()%>/member/logout">로그아웃</a><br/>
+			2. <a href="${pageContext.servletContext.contextPath}/freeboard/list">자유 게시판</a><br/>
+			3. <a href="${pageContext.servletContext.contextPath}/photoboard/list">포토 게시판</a><br/>
+		</c:if>
+		<br/>		
 	</body>
 </html>

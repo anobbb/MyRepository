@@ -12,26 +12,31 @@
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:49:17 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="btitle" id="C5CCFB54-9860-5E3A-1412-E5EA9459E6C5">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:49:17 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="bcontent" id="A8B6E998-28A1-9AEB-2E4E-D90D8D602A84">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:49:17 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -39,26 +44,34 @@
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:49:17 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C3EB6919-8E69-909A-03B3-B3694ED2E775" referredColumn="11ED0EDB-C0EF-52FC-DAD9-DBA90B91249B"/>
+</associations>
 </Column>
 <Column name="bhitcount" id="C88FD657-1D25-63E8-B5B9-4977EB2D349B">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:49:17 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="bdate" id="54272045-6CA4-7CCF-12E1-184CD7D732F6">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:49:17 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -66,9 +79,11 @@
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:49:17 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="savedfile" id="EEFAE43F-259B-880A-BBCE-79B91E16B546">
@@ -76,18 +91,46 @@
 <createdTime>2016-10-26 00:49:17 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="mimetype" id="39E63E5D-1174-4C17-62CD-EABA7E86DAC5">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-26 00:49:17 UTC</createdTime>
 <ownerDesignName>DB모델링</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="828F3761-A3E5-FCCB-0566-9854D7FB0D31" name="photoboard_PK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 03:24:24 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B3EF73B6-2E74-B623-58A7-629AD0B83B76"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6C8A52A2-C481-54E0-06FC-FEB6D64AAFCE" name="photoboard_member_FK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-26 03:26:07 UTC</createdTime>
+<ownerDesignName>DB모델링</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6A6DCED-DC8E-E28D-101F-B657E851E6C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
 </Table>
