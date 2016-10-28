@@ -24,7 +24,7 @@
 		</c:if>		
 		
 		<table style= "border-collapse: collapse; border: 1px solid black; width: 600px">
-			<tr style="background-color: #ffcc00">
+			<tr style="background-color: pink"> <!-- #ffcc00 -->
 				<td style="border: 1px solid black">번호</td> 
 				<td style="border: 1px solid black">제목</td> 
 				<td style="border: 1px solid black">글쓴이</td>		
@@ -67,11 +67,9 @@
 			</c:if> <!-- 그룹번호가 1이상일때는 이전이 나오게 함 -->
 			
 			<c:forEach var="i" begin="${startPageNo}" end="${endPageNo}">
-				&nbsp;
 				<a href="list?pageNo=${i}" 
 					<c:if test="${pageNo==i}">style="color:red"</c:if>
 				>${i}</a>
-				&nbsp;
 			</c:forEach>
 			
 			<c:if test="${groupNo<totalGroupNo}">

@@ -11,14 +11,14 @@ import com.mycompany.myweb.dto.PhotoBoard;
 @Component
 public class PhotoBoardService {
 	
-	private static final int WRITE_SUCCESS = 0;
-	//private static final int WRITE_FAIL = 1;
+	public static final int WRITE_SUCCESS = 0;
+	public static final int WRITE_FAIL = 1;
 	
-	private static final int MODIFY_SUCCESS = 0;
-	private static final int MODIFY_FAIL = 1;
+	public static final int MODIFY_SUCCESS = 0;
+	public static final int MODIFY_FAIL = 1;
 	
-	private static final int REMOVE_SUCCESS = 0;
-	private static final int REMOVE_FAIL = 1;
+	public static final int REMOVE_SUCCESS = 0;
+	public static final int REMOVE_FAIL = 1;
 	
 	@Autowired
 	private PhotoBoardDao photoBoardDao;
@@ -27,13 +27,13 @@ public class PhotoBoardService {
 		return photoBoardDao.selectByPage(pageNo, rowsPerPage);
 	} // list
 	
-	public int write(PhotoBoard freeBoard){
-		int row = photoBoardDao.insert(freeBoard);
+	public int write(PhotoBoard photoBoard){
+		int row = photoBoardDao.insert(photoBoard);
 		return WRITE_SUCCESS;		
 	} // write
 	
-	public int modify(PhotoBoard freeBoard){
-		int row = photoBoardDao.update(freeBoard);
+	public int modify(PhotoBoard photoBoard){
+		int row = photoBoardDao.update(photoBoard);
 		if(row == 0) { return MODIFY_FAIL; } // where 조건절이 안 맞을 경우(내 목록에서는 보이지만 그 사이에 관리자가 삭제했을 경우)
 		return MODIFY_SUCCESS;
 	} // modify
@@ -48,5 +48,7 @@ public class PhotoBoardService {
 		return photoBoardDao.selectByBno(bno);
 	} // info
 	
-	
+	public int getCount(){
+		return photoBoardDao.count();
+	}
 }
