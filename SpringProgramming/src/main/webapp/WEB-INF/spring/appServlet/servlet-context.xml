@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -88,6 +90,31 @@
 		<beans:property name="c" ref="c"/> <!-- ref는 C를 관리객체로 생성한 이름(name) -->
 		<beans:property name="e" ref="e"/>
 		<beans:property name="f" ref="f"/>
-		
 	</beans:bean>
+	
+	<!-- Connection Pool -->
+	
+  	<beans:bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<beans:property name="driverClass" value="oracle.jdbc.OracleDriver"/>
+		<beans:property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+		<beans:property name="user" value="tester1"/>
+		<beans:property name="password" value="kosa12345"/>
+		<beans:property name="maxPoolSize" value="3"/>
+		<beans:property name="initialPoolSize" value="1"/>
+		<beans:property name="acquireIncrement" value="1"/>
+		<beans:property name="minPoolSize" value="1"/>
+	</beans:bean>
+	
+	 
+	 <!-- tomcat이 connection pool을 가지는 경우
+	 새로운 마크업 언어 필요(jee check) id는 name과 같은 역할, spring의 WAS 관리 객체로 등록하여 사용
+	 <jee:jndi-lookup id="dataSource" jndi-name="jdbc/orcl"/>
+	 -->
+	 
+	 <!-- JdbcTemplate 객체 생성 -->
+	 <!-- connection pool 사용할 수 있도록 JdbcTemplate에 주입시켜야 함, 
+	 name: 관리객체이름, ref: 객체참조이름(위에 connection pool한 name) -->
+	 <beans:bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	 	<beans:property name="dataSource" ref="dataSource"/>
+	 </beans:bean>
 </beans:beans>

@@ -93,14 +93,14 @@
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-  	 		<artifactId>javax.servlet-api</artifactId>
-   			<version>3.1.0</version>
+    		<artifactId>javax.servlet-api</artifactId>
+    		<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
-   			<artifactId>javax.servlet.jsp-api</artifactId>
-   			<version>2.3.1</version>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -115,7 +115,26 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>   
+		
+		<!-- Connection Pool -->
+ 		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>c3p0</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>0.9.1.2</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.oracle</groupId>
+		    <artifactId>ojdbc6</artifactId>
+		    <version>11.2.0.4</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>

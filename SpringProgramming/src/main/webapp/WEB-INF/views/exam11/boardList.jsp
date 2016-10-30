@@ -12,7 +12,7 @@
 		게시물 목록
 		<hr/>
 		
-		<table style= "border-collapse: collapse; border: 1px solid black; width: 600px";>
+		<table style= "border-collapse: collapse; border: 1px solid black; width: 600px">
 			<tr style="background-color: #ffcc00">
 				<td style="border: 1px solid black">제목</td> 
 				<td style="border: 1px solid black">내용</td> 

@@ -22,6 +22,7 @@ public class Exam11BoardDao {
 	}
 	
 	public List<Board> selectList(){
+		logger.info("selectList 처리");
 		List<Board> list = new ArrayList<>();
 		for(int i=1; i<=10; i++){
 			Board board = new Board();
@@ -32,4 +33,22 @@ public class Exam11BoardDao {
 		}
 		return list;
 	}
+	
+	public Board selectBoard(int bno){
+		logger.info("selectBoard 처리");
+		Board board = new Board();
+		board.setBwriter("슈퍼맨");
+		board.setBtitle("가을야구 끝");
+		board.setBcontent("내년에 만나 ㅎㅎㅎ");
+		return board;
+	}
+
+	public void update(Board board) {
+		logger.info("update 처리");
+	}
+	
+	public void delete(int bno){
+		logger.info("delete 처리");
+	}
+	
 }

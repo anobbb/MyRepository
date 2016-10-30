@@ -35,4 +35,13 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern> <!-- 필터는 /만으로는 안 됨. *가 반드시 들어가야 함, 이류는 모름  -->
 	</filter-mapping>
+	
+	<!-- tomcat이 connection pool을 가지는 경우
+	<resource-ref>
+ 		<description>Oracle Datasource example</description>
+ 		<res-ref-name>jdbc/orcl</res-ref-name>
+ 		<res-type>javax.sql.DataSource</res-type>
+ 		<res-auth>Container</res-auth>
+	</resource-ref>
+	-->
 </web-app>
