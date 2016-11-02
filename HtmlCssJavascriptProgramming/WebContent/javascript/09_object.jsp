@@ -7,18 +7,44 @@
 	</head>
 
 	<body>
-		JavaScript
+		객체
 		<hr/>	
-		1. <a href="01_datatype.jsp">데이터 타입</a><br/>
-		2. <a href="02_function.jsp">함수 선언</a><br/>
-		3. <a href="03_local_global_variables.jsp">지역 변수와 전역변수</a><br/>
-		4. <a href="04_string_method.jsp">String 객체의 메소드</a><br/>
-		5. <a href="05_string_to_number.jsp">String을 숫자로 변환</a><br/>
-		6. <a href="06_math_method.jsp">수학 관련 메소드</a><br/>
-		7. <a href="07_date.jsp">날짜 얻기</a><br/>
-		8. <a href="08_array.jsp">배열</a><br/>
-		9. <a href="09_object.jsp">객체</a><br/>
-		10. <a href="10_dom.jsp">DOM 사용</a><br/>
+		<script type="text/javascript">
+			var car = {
+				model: "승용차",
+				company: "현대",
+				cc: 3000,
+				speed: 0,
+				start: function() {
+					console.log("시동을 겁니다.");
+				}, 
+				stop: function() {
+					console.log("멈춥니다.");
+				},
+				setSpeed: function(speed) {
+					this.speed = speed;
+				},
+				getSpeed: function(){
+					return this.speed;
+				}
+			};
+			
+			console.log("car.model: " + car.model);
+			console.log("car.company: " + car.company);
+			console.log("car.cc: " + car.cc);
+			console.log("car.speed: " + car.speed);
+			
+			//필드(속성) 값 변경
+			car.model = "자율주행";
+			car.speed = 60;
+			console.log(car);
+			
+			//메소드 호출
+			car.start();
+			car.setSpeed(100);
+			console.log("현재 속도: " + car.getSpeed());
+			car.stop();
+		</script>
 	</body>
 	
 </html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        

@@ -4,21 +4,43 @@
 <html>    <!-- root tag or root element -->
 	<head>                           
 		<meta charset = "UTF-8">
+		<script type="text/javascript">
+			var v1 = "A";
+			
+			function fun1(){
+				var v2 = "B";
+				v3 = "C"; // var를 사용하지 않고 변수 사용하면 전역변수로 자동 선언됨 
+				console.log("v1: " + v1);
+				console.log("v2: " + v2);
+				console.log("v3: " + v3);
+			}
+			
+			function fun2(){
+				console.log("v1: " + v1);
+				console.log("v3: " + v3);
+				console.log("v2: " + v2);
+			}
+			
+			function fun3() {
+				if(true){
+					var v4 = "D";
+				}
+				console.log("v4: " + v4);
+			}
+		</script>
 	</head>
-
+	<%-- 자바스크립트는 블록단위의 지역변수는 없지만 함수단위의 지역변수는 있음, 함수 내에서 자유롭게 사용 가능
+		var없이 변수 사용하면 전역변수로 자동 선언되어서 사용됨
+	 --%>
 	<body>
-		JavaScript
+		지역 변수와 전역변수
 		<hr/>	
-		1. <a href="01_datatype.jsp">데이터 타입</a><br/>
-		2. <a href="02_function.jsp">함수 선언</a><br/>
-		3. <a href="03_local_global_variables.jsp">지역 변수와 전역변수</a><br/>
-		4. <a href="04_string_method.jsp">String 객체의 메소드</a><br/>
-		5. <a href="05_string_to_number.jsp">String을 숫자로 변환</a><br/>
-		6. <a href="06_math_method.jsp">수학 관련 메소드</a><br/>
-		7. <a href="07_date.jsp">날짜 얻기</a><br/>
-		8. <a href="08_array.jsp">배열</a><br/>
-		9. <a href="09_object.jsp">객체</a><br/>
-		10. <a href="10_dom.jsp">DOM 사용</a><br/>
+		<script type="text/javascript">
+			fun1();
+			console.log("-------");
+			fun2();
+			fun3();
+		</script>
 	</body>
 	
 </html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        

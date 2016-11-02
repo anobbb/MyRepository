@@ -2,23 +2,26 @@
 
 <!DOCTYPE html> <!-- 문서 유형 스타일 -->
 <html>    <!-- root tag or root element -->
-	<head>                           
+	<head> <%-- 선선언 후호출, 매개변수 타입&리턴타입X --%>                           
 		<meta charset = "UTF-8">
+		<script type="text/javascript">
+			function sum(from, to){
+				var sum = 0;
+				for(var i=from; i<=to; i++){
+					sum += i;
+				}
+				return sum;
+			}
+		</script>
 	</head>
 
 	<body>
-		JavaScript
-		<hr/>	
-		1. <a href="01_datatype.jsp">데이터 타입</a><br/>
-		2. <a href="02_function.jsp">함수 선언</a><br/>
-		3. <a href="03_local_global_variables.jsp">지역 변수와 전역변수</a><br/>
-		4. <a href="04_string_method.jsp">String 객체의 메소드</a><br/>
-		5. <a href="05_string_to_number.jsp">String을 숫자로 변환</a><br/>
-		6. <a href="06_math_method.jsp">수학 관련 메소드</a><br/>
-		7. <a href="07_date.jsp">날짜 얻기</a><br/>
-		8. <a href="08_array.jsp">배열</a><br/>
-		9. <a href="09_object.jsp">객체</a><br/>
-		10. <a href="10_dom.jsp">DOM 사용</a><br/>
+		함수 선언
+		<hr/>
+		<script type="text/javascript">
+			console.log("1부터 10까지의 합: " + sum(1, 10));
+		</script>
+		
 	</body>
 	
 </html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        

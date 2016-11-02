@@ -7,18 +7,34 @@
 	</head>
 
 	<body>
-		JavaScript
+		String 객체의 메소드
 		<hr/>	
-		1. <a href="01_datatype.jsp">데이터 타입</a><br/>
-		2. <a href="02_function.jsp">함수 선언</a><br/>
-		3. <a href="03_local_global_variables.jsp">지역 변수와 전역변수</a><br/>
-		4. <a href="04_string_method.jsp">String 객체의 메소드</a><br/>
-		5. <a href="05_string_to_number.jsp">String을 숫자로 변환</a><br/>
-		6. <a href="06_math_method.jsp">수학 관련 메소드</a><br/>
-		7. <a href="07_date.jsp">날짜 얻기</a><br/>
-		8. <a href="08_array.jsp">배열</a><br/>
-		9. <a href="09_object.jsp">객체</a><br/>
-		10. <a href="10_dom.jsp">DOM 사용</a><br/>
+		<script type="text/javascript">
+			var v1 = "abc";
+			console.log(v1.length); //length: 필드
+			
+			var v2 = "JavaScript is easy";
+			console.log(v2.indexOf("easy"));
+			console.log(v2.indexOf("spring"));
+			console.log(v2.search("easy"));
+			
+			var v3 = "123456-9876543";
+			console.log(v3.substring(7, 14)); // 끝 인덱스
+			console.log(v3.substr(7,7)); // 가져올 만큼의 길이
+			console.log(v3.charAt(7));
+			
+			var v4 = "Please visit Microsoft!";
+			var v5 = v4.replace("Microsoft", "W3Schools");
+			console.log("v5: " + v5);
+			
+			var v6 = "10:20:30";
+			var v7 = v6.split(":"); // 리턴타입: 배열
+			console.log(v7[0]);
+			console.log(v7[1]);
+			console.log(v7[2]);
+			
+			
+		</script>
 	</body>
 	
 </html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
