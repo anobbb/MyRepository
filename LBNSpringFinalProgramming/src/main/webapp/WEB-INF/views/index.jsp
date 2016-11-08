@@ -58,8 +58,8 @@
 			<div id="content">
 				<div id="menu">
 				<ul>
-					<li><a href="${pageContext.servletContext.contextPath}/member/login">로그인</a></li>
-					<li><a href="${pageContext.servletContext.contextPath}/photoboard/list">포토게시판</a></li>
+					<li><a href="${pageContext.servletContext.contextPath}/member/login" target="center">로그인</a></li>
+					<li><a href="${pageContext.servletContext.contextPath}/photoboard/list" target="center">포토게시판</a></li>
 	
 			    </ul>
 				</div>
