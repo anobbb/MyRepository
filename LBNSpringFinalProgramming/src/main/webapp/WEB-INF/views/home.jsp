@@ -12,9 +12,10 @@
 	</head>
 	
 	<body> 
-		SpringFinalProgramming
+		<h1>Welcome to the LBN World ^~^</h1>
 		<hr/> 
-		
+		<p> 어서와 로그인부터 해브아~</p>
+						
 		1. 
 		<c:if test="${login == null}">
 			<a href="<%=pageContext.getServletContext().getContextPath()%>/member/login">로그인</a>

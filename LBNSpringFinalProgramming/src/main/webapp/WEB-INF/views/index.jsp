@@ -58,17 +58,19 @@
 			<div id="content">
 				<div id="menu">
 				<ul>
-					<li><a href="${pageContext.servletContext.contextPath}/member/login" target="center">로그인</a></li>
-					<li><a href="${pageContext.servletContext.contextPath}/photoboard/list" target="center">포토게시판</a></li>
+				
+					<li><a href="${pageContext.servletContext.contextPath}/member/login" target="iframe">로그인</a></li>
+					<li><a href="${pageContext.servletContext.contextPath}/photoboard/list" target="iframe">포토게시판</a></li>
 	
 			    </ul>
 				</div>
 				<div id="center">
-					<h1>Welcome to the LBN World ^~^</h1>
-					<p> 어서와 회원가입부터 해브아~
-					</p>
+					<iframe name="iframe" style="width:100%; height:100%; border-width:0px;" src="home">
+						
+					</iframe>
 				</div>
 			</div>
+			
 			<div id="footer">Copyright © bnphotoapp.com</div>
 		</div>
      
