@@ -14,15 +14,15 @@
 	<body> 
 		<h1>Welcome to the LBN World ^~^</h1>
 		<hr/> 
-		<p> 어서와 로그인부터 해브아~</p>
+		
 						
-		1. 
+		 
 		<c:if test="${login == null}">
-			<a href="<%=pageContext.getServletContext().getContextPath()%>/member/login">로그인</a>
+			<p> 어서와 로그인부터 해브아~</p>
 		</c:if>
 		<c:if test="${login != null}">
 		<!-- 상대경로: /member/logout -->
-			<a href="<%=pageContext.getServletContext().getContextPath()%>/member/logout">로그아웃</a><br/>
+			1. <a href="<%=pageContext.getServletContext().getContextPath()%>/member/logout">로그아웃</a><br/>
 			2. <a href="${pageContext.servletContext.contextPath}/photoboard/list">포토 게시판</a><br/>
 		</c:if>
 		<br/>		
