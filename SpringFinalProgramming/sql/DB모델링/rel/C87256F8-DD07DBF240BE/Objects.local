@@ -1,6 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<oracle.dbtools.crest.model.design.relational.RelationalDesign>
-   <object objectType="Table" objectID="8474FACC-C4BA-740B-827F-BF67C278E1DC" name="freeboard" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="C87256F8-1824-B054-B6D9-DD07DBF240BE" propertySourceId="" propertyTargetId=""/>
-   <object objectType="Table" objectID="64CC7DD1-C336-1CD3-2260-9BC0414DFEA3" name="member" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="C87256F8-1824-B054-B6D9-DD07DBF240BE" propertySourceId="" propertyTargetId=""/>
-   <object objectType="Table" objectID="6F2EC219-A5C7-5C3D-B4F9-1D350AF39559" name="photoboard" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="C87256F8-1824-B054-B6D9-DD07DBF240BE" propertySourceId="" propertyTargetId=""/>
-</oracle.dbtools.crest.model.design.relational.RelationalDesign>
