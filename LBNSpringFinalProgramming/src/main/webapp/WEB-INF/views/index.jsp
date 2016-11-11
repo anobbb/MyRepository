@@ -57,7 +57,7 @@
 			<div id="header"><h1>♥ LBN World ♥</h1></div>
 			<div id="content">
 				<div id="menu">
-				<ul>
+				<ul> 
 				
 					<li><a href="${pageContext.servletContext.contextPath}/member/login" target="iframe">로그인</a></li>
 					<li><a href="${pageContext.servletContext.contextPath}/photoboard/list" target="iframe">포토게시판</a></li>
