@@ -127,6 +127,7 @@ public class PhotoBoardController {
 	    //파일을 다운받게함, \"파일명\" -> 문자인식, 
 		OutputStream os = response.getOutputStream();
 		
+		//실제 파일의 경로 얻기(URL상의 경로)
 		String filePath = request.getServletContext().getRealPath("/WEB-INF/photo/" + fileName);
 		InputStream is = new FileInputStream(filePath);
 		
