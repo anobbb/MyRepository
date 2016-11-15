@@ -151,8 +151,7 @@ public class PhotoBoardController {
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	public String modify(PhotoBoard photoBoard,HttpSession session){
 		PhotoBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
-		photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
-		photoBoardService.modify(photoBoard);
+		
 		try {
 			String mid = (String)session.getAttribute("login");
 			photoBoard.setBwriter(mid);
@@ -168,8 +167,9 @@ public class PhotoBoardController {
 			photoBoard.setSavedfile(savedfile); 
 			
 			photoBoard.setMimetype(photoBoard.getPhoto().getContentType()); // DB저장내용: 파일 타입
+			photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
+			photoBoardService.modify(photoBoard);
 			
-			int result = photoBoardService.write(photoBoard);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -160,10 +160,9 @@ public class PhotoBoardController {
 	}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
-	public String modify(PhotoBoard photoBoard,HttpSession session){
+	public String modify(PhotoBoard photoBoard,HttpSession session, Model model){
 		PhotoBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
-		photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
-		photoBoardService.modify(photoBoard);
+	
 		try {
 			String mid = (String)session.getAttribute("login");
 			photoBoard.setBwriter(mid);
@@ -179,11 +178,17 @@ public class PhotoBoardController {
 			photoBoard.setSavedfile(savedfile); 
 			
 			photoBoard.setMimetype(photoBoard.getPhoto().getContentType()); // DB저장내용: 파일 타입
-			
-			int result = photoBoardService.write(photoBoard);
+			photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
+			photoBoardService.write(photoBoard);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		return "redirect:/photoboard/list";
+	}
+	
+	@RequestMapping("/remove")
+	public String remove(int bno){
+		photoBoardService.remove(bno);
 		return "redirect:/photoboard/list";
 	}
 	
