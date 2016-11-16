@@ -1,3 +1,4 @@
+
 package com.mycompany.myweb.controller;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mycompany.myweb.dto.FreeBoard;
 import com.mycompany.myweb.service.FreeBoardService;
-
+ 
 @Controller
 @RequestMapping("/freeboard")
 public class FreeBoardController {
@@ -118,7 +119,6 @@ public class FreeBoardController {
 	}
 	
 } // class
-
 
 
 /*
