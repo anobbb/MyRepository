@@ -10,7 +10,7 @@ public class Food {
 	public Food() {}
 
 	public Food(String image, String imageLarge, String title, String price, String content) {
-		super();
+		
 		this.image = image;
 		this.imageLarge = imageLarge;
 		this.title = title;
