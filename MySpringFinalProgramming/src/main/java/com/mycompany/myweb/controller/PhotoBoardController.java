@@ -161,33 +161,31 @@ public class PhotoBoardController {
 		return "photoboard/modify";
 	}
 	
-	@RequestMapping(value="/modify", method=RequestMethod.POST)
-	public String modify(PhotoBoard photoBoard,HttpSession session){
-		PhotoBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
-		photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
-		photoBoardService.modify(photoBoard);
-		try {
-			String mid = (String)session.getAttribute("login");
-			photoBoard.setBwriter(mid);
-			
-			photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());
-			
-			String savedfile = new Date().getTime() + photoBoard.getPhoto().getOriginalFilename();
-			
-			String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/" + savedfile); 
-			
-			photoBoard.getPhoto().transferTo(new File(realpath)); 
-			
-			photoBoard.setSavedfile(savedfile); 
-			
-			photoBoard.setMimetype(photoBoard.getPhoto().getContentType()); // DB저장내용: 파일 타입
-			
-			int result = photoBoardService.write(photoBoard);
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "redirect:/photoboard/list";
-	}
+	@RequestMapping(value = "/modify", method=RequestMethod.POST)
+	   public String modify(PhotoBoard photoBoard, HttpSession session, Model model){
+
+	      PhotoBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
+	      try{
+	         String mid = (String)session.getAttribute("login");
+	         photoBoard.setBwriter(mid);
+	         photoBoard.setOriginalfile(photoBoard.getPhoto().getOriginalFilename());//저장할 파일 originalfilename 얻기
+
+	         String savedfile = new Date().getTime()+photoBoard.getPhoto().getOriginalFilename();
+	         String realpath = session.getServletContext().getRealPath("/WEB-INF/photo/"+savedfile);//저장할 파일의 절대 파일 시스템 경로를 얻는다.
+	         //C:\Users\Administrator\workspace\.metadata\...\SpringFinalProgramming\...
+
+	         photoBoard.getPhoto().transferTo(new File(realpath));//클라이언트에서 저장한 파일을 해당 경로(realpath)에 저장 실제 파일을 저장
+	         photoBoard.setSavedfile(savedfile);
+
+	         photoBoard.setMimetype(photoBoard.getPhoto().getContentType());//저장할 파일의 mime type 얻어냄.
+	         photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
+	         photoBoardService.modify(photoBoard);
+	         //db에 originalfile, savedfile, mimetype 을 저장(실제 파일은 photoBoard.getPhoto().transferTo(new File(realpath));에 저장)
+	         }catch (Exception e) {
+	            // TODO: handle exception
+	         }
+	      return "redirect:/photoboard/list";
+	   }
 	
 } // class
 

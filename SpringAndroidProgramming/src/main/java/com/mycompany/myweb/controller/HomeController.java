@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.myweb.dto.Food;
 import com.mycompany.myweb.dto.Light;
 
 @Controller
@@ -46,6 +47,20 @@ public class HomeController {
 		
 		model.addAttribute("list", list);
 		return "lightList";
+	}
+	
+	@RequestMapping("/foodList")
+	public String foodList(Model model){
+		List<Food> list = new ArrayList<>();
+		list.add(new Food("food01.png", "food01_large.png", "음식1", "35,000", "Information about popular Korean food dishes and local restaurant listings in the Tri-state area."));
+		list.add(new Food("food02.png", "food02_large.png", "음식2", "45,000", "Information about popular Korean food dishes and local restaurant listings in the Tri-state area."));
+		list.add(new Food("food03.png", "food03_large.png", "음식3", "55,000", "Information about popular Korean food dishes and local restaurant listings in the Tri-state area."));
+		list.add(new Food("food04.png", "food04_large.png", "음식4", "65,000", "Information about popular Korean food dishes and local restaurant listings in the Tri-state area."));
+		list.add(new Food("food05.png", "food05_large.jpg", "음식5", "75,000", "Information about popular Korean food dishes and local restaurant listings in the Tri-state area."));
+		list.add(new Food("food06.jpg", "food06_large.jpg", "음식6", "85,000", "Information about popular Korean food dishes and local restaurant listings in the Tri-state area."));
+		
+		model.addAttribute("list", list);
+		return "foodList";
 	}
 	
 	@RequestMapping("/getImage") //Jsp로 갈 필요 없으므로 void, 여기서 직접 보여줌
