@@ -1,0 +1,275 @@
+/* Large Devices Styles Starts */
+
+@media (min-width: 1200px) {
+
+	/* About Section Styles Starts */
+	
+	.spl-box h2, 
+	.spl-box p {
+		margin-right: 30px;
+	}
+	
+}
+
+/* Medium Devices Styles Starts */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	/* Navigation Styles Starts */
+	
+		.navbar-nav li {
+			padding: 15px 10px;
+		}
+
+	/* About Section Styles Starts */
+	
+	.spl-box h2, 
+	.spl-box p {
+		margin-right: 30px;
+	}
+	
+	/* Gallery Section Styles Starts */
+	
+		ul#gallery-grid li {
+			min-height: 175px;
+			height: auto !important;
+			height: 175px;
+		}
+
+}
+
+/* Small Devices Styles Starts */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	/* Navigation Styles Starts */
+	
+	.navbar-default { 
+		text-align: center;
+	}
+	.sticky-nav:after {
+		bottom: -8px;
+	}
+	.navbar-nav {
+		margin-top: 12px;
+	}
+		.navbar-header, 
+		.navbar-brand, 
+		.navbar-right, 
+		.navbar-nav {
+			float: none !important;
+		}		 
+		.navbar-brand {
+			padding: 0;
+		}
+		.navbar-brand .img-responsive {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	/* Slider Section Styles Starts */
+	
+		.camera_caption {
+			top: 16%;
+		}
+		.camera_caption h1 {
+			font-size: 38px;
+		}
+
+	/* About Section Styles Starts */
+	
+	.about {
+		text-align: center;
+	}
+		.about .img-responsive {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.spl-box {
+			padding: 30px;
+		}
+		.spl-box h2 {
+			font-size: 42px;
+		}
+		
+		/* Gallery Section Styles Starts */
+	
+		ul#gallery-grid li {
+			min-height: 180px;
+			height: auto !important;
+			height: 180px;
+		}
+
+	/* Contact Section Styles Starts */
+	
+	.contact form {
+		margin-bottom: 40px;
+	}
+	
+	/* Footer Section Styles */
+
+	.footer 	 {
+		text-align:center;
+	}
+		.footer ul {
+			float:none;
+			margin:20px 0 0 0;
+		}
+		
+	/* Generic Styles Starts */
+	
+	.spacer { height: 30px; }
+	
+}
+
+/* Extra Small Devices Styles Starts */
+
+@media (max-width: 767px) {
+
+	/* Navigation Styles Starts */
+	
+	.navbar {
+		min-height: 75px;
+		padding-top: 10px;
+	}
+		.sticky-nav:after {
+			display: none;
+			bottom: -11px;
+		}
+		.navbar-default .navbar-toggle {
+			border-color: #fff;
+		}
+		.navbar-default .navbar-toggle .icon-bar {
+			background-color: #fff;
+		}
+		.navbar-default .navbar-toggle:hover, 
+		.navbar-default .navbar-toggle:focus {
+			background-color: #a3543f;
+			border-color: #cb755f;
+		}
+		.navbar-default .navbar-collapse, 
+		.navbar-default .navbar-form {
+			border: none;
+		}
+		.navbar-nav {
+			border-top: 1px solid #3f2511;
+		}
+			.navbar-nav li {
+				padding: 10px 0;
+				font-size: 16px;
+				text-align: center;
+			}
+			.navbar-nav li + li {
+				border-top: 1px solid #4a2e19;
+			}
+				.navbar-nav li.current a, 
+				.navbar-nav li a:hover {
+					color: #a3543f !important;
+				}
+				.navbar-nav li.current a {
+					padding-bottom: 0;
+					border-bottom: none;
+				}
+
+	/* Slider Section Styles Starts */
+	
+	.camera_caption {
+		top: 8%;
+	}
+		.camera_caption h1 {
+			font-size: 22px;
+		}
+
+	/* Featured Block Styles Starts */
+	
+	.featured-block {
+		padding-top: 5px;
+	}	
+		.featured-block .img-responsive {
+			padding-top: 30px;
+		}
+
+	/* About Section Styles Starts */
+	
+	.about {
+		text-align: center;
+	}
+		.about h2 {
+			line-height: 40px;
+			font-size: 60px;
+		}
+		.about h2 span {
+			font-size: 30px;
+		}
+		.about p.lead {
+			font-size: 16px;
+		}
+		.about .img-responsive {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.spl-box {
+			padding: 30px;
+		}
+			.spl-box h2 {
+				font-size: 38px;
+			}
+			
+	/* Services Section Styles Starts */
+	
+	.services {
+		text-align: center;
+	}
+		.services .img-responsive {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+	/* Gallery Section Styles Starts */
+	
+		ul#gallery-filter li a.btn {
+			padding: 6px 15px;
+			font-size: 16px;
+		}
+	
+		ul#gallery-grid li {
+			min-height: 83px;
+			height: auto !important;
+			height:83px;
+		}
+			ul#gallery-grid li .img-responsive {
+				margin-left: auto;
+				margin-right: auto;
+			}
+				.head-part {
+					height: 100%;
+				}
+					.head-part i.fa {
+						font-size: 26px;
+					}
+
+	/* Contact Section Styles Starts */
+	
+	.contact form {
+		margin-bottom: 30px;
+	}
+
+	/* Footer Section Styles */
+
+	.footer 	 {
+		text-align:center;
+	}
+		.footer ul {
+			float:none;
+			margin:20px 0 0 0;
+		}
+			.footer li {
+				padding-left: 10px;
+				font-size: 30px;
+			}
+			
+	/* Generic Styles Starts */
+	
+	.spacer { height: 20px; }
+	
+}
